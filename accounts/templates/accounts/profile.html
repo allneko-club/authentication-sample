@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}プロファイル{% endblock %}
+
+{% block content %}
+  <p>プロファイル</p>
+  <a href="{% url 'password_change' %}">パスワード変更</a>
+
+  <a href="{% url 'logout' %}">ログアウト</a>
+{% endblock %}

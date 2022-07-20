@@ -1,0 +1,16 @@
+{% load i18n static %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  {% block content_title %}
+    {% if title %}<h1>{{ title }}</h1>{% endif %}
+  {% endblock %}
+
+  {% block content %}{% endblock %}
+</body>
+</html>
